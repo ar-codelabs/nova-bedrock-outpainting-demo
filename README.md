@@ -48,7 +48,7 @@ python generate_image_and_EditRatio_Opencv.py
 - `cityscape_banner_2x1_nova_omni_original.png` (2880x1440, 2:1 원본)
 - `cityscape_banner_3x1_nova_omni.png` (3072x1024, 3:1 변환)
 
-#### 방법 2: AI Outpainting (자연스러운 확장)
+#### 방법 2: AI Outpainting 
 ```bash
 python generate_image_and_EditRatio_NovaCanvas.py
 ```
@@ -57,16 +57,6 @@ python generate_image_and_EditRatio_NovaCanvas.py
 - `cityscape_banner_2x1_nova_omni_original.png` (2880x1440, 2:1 원본)
 - `cityscape_banner_3x1_nova_canvas_outpaint.png` (3072x1024, 3:1 확장)
 
-## 📊 두 방법 비교
-
-| 특징 | Simple Stretch | AI Outpainting |
-|------|----------------|----------------|
-| **속도** | 빠름 (1회 API 호출) | 느림 (2회 API 호출) |
-| **비용** | 저렴 | 비쌈 |
-| **품질** | 좌우가 약간 늘어남 | 자연스러운 확장 |
-| **일관성** | 항상 동일한 결과 | 매번 다른 결과 |
-| **위아래 보존** | 100% 보존 | 100% 보존 |
-| **추천 용도** | 빠른 프로토타입, 테스트 | 최종 프로덕션, 고품질 |
 
 ## 🔧 작동 원리
 
@@ -112,7 +102,6 @@ python generate_image_and_EditRatio_NovaCanvas.py
 **단점:**
 - 추가 API 호출 필요
 - 처리 시간 증가
-- 매번 다른 결과
 
 ## 📝 프롬프트 커스터마이징
 
@@ -159,8 +148,6 @@ aws ec2 create-vpc-endpoint \
 }
 ```
 
-**중요:** Web Grounding과 달리 이미지 생성은 외부 인터넷 접속이 필요 없으며, 모든 처리가 AWS 내부에서 이루어집니다.
-
 ## 📦 Requirements
 
 ```
@@ -169,19 +156,6 @@ Pillow>=10.0.0
 python-dotenv>=1.0.0
 ```
 
-## 🎯 사용 사례
-
-### Simple Stretch 추천
-- 빠른 프로토타이핑
-- A/B 테스트용 이미지
-- 내부 검토용 자료
-- 비용 절감이 중요한 경우
-
-### AI Outpainting 추천
-- 최종 프로덕션 배너
-- 마케팅 캠페인 소재
-- 고품질이 중요한 경우
-- 창의적인 확장이 필요한 경우
 
 ## 🐛 트러블슈팅
 
@@ -203,13 +177,7 @@ MemoryError: Unable to allocate array
 ```
 **해결:** 더 작은 해상도로 생성하거나 시스템 메모리를 늘리세요.
 
-## 📄 라이선스
 
-MIT License
-
-## 🤝 기여
-
-이슈와 PR을 환영합니다!
 
 ## 📧 문의
 
