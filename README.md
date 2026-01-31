@@ -7,8 +7,8 @@ AWS Bedrock Nova 2 Omni를 사용하여 3:1 비율의 배너 이미지를 생성
 
 Nova 2 Omni는 기본적으로 2880x1440 (2:1 비율) 이미지를 생성합니다. 이 프로젝트는 2:1 이미지를 3072x1024 (3:1 비율)로 변환하는 두 가지 방법을 제공합니다:
 
-1. **Simple Stretch** (`generate_image.py`) - 좌우를 늘려서 3:1로 변환
-2. **AI Outpainting** (`generate_image_novacanvas.py`) - Nova Canvas로 양옆에 새로운 내용 생성
+1. **Simple Stretch** (`generate_image_and_EditRatio_Opencv.py`) - 좌우를 늘려서 3:1로 변환
+2. **AI Outpainting** (`generate_image_and_EditRatio_NovaCanvas.py`) - Nova Canvas로 양옆에 새로운 내용 생성
 
 ## 🚀 빠른 시작
 
@@ -41,7 +41,7 @@ aws configure
 
 #### 방법 1: Simple Stretch (빠르고 간단)
 ```bash
-python generate_image.py
+python generate_image_and_EditRatio_Opencv.py
 ```
 
 **생성 파일:**
@@ -50,7 +50,7 @@ python generate_image.py
 
 #### 방법 2: AI Outpainting (자연스러운 확장)
 ```bash
-python generate_image_novacanvas.py
+python generate_image_and_EditRatio_NovaCanvas.py
 ```
 
 **생성 파일:**
@@ -70,7 +70,7 @@ python generate_image_novacanvas.py
 
 ## 🔧 작동 원리
 
-### Method 1: Simple Stretch (`generate_image.py`)
+### Method 1: Simple Stretch (`generate_image_and_EditRatio_Opencv.py`)
 
 ```
 1. Nova 2 Omni로 2880x1440 (2:1) 이미지 생성
@@ -89,7 +89,7 @@ python generate_image_novacanvas.py
 **단점:**
 - 가로 방향이 약간 늘어나 보일 수 있음
 
-### Method 2: AI Outpainting (`generate_image_novacanvas.py`)
+### Method 2: AI Outpainting (`generate_image_and_EditRatio_NovaCanvas.py`)
 
 ```
 1. Nova 2 Omni로 2880x1440 (2:1) 이미지 생성
